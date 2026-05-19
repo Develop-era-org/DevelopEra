@@ -35,15 +35,18 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/form", {
-        method: "POST",
+      const response = await fetch(
+        (process.env.BACKEND_URL || "http://localhost:3000") + "/form",
+        {
+          method: "POST",
 
-        headers: {
-          "Content-Type": "application/json",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(form),
         },
-
-        body: JSON.stringify(form),
-      });
+      );
 
       const data = await response.json();
 
