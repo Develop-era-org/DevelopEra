@@ -18,8 +18,6 @@ import Footer from "./components/Footer/Footer";
 import Intro from "./components/Intro/Intro";
 import Marquee from "./components/Marquee/Marquee";
 import SmoothScroll from "./components/SmoothScroll";
-// import HeroReplica from "./copy/HeroReplica";
-// import IntroReplica from "./copy/IntroReplica";
 
 export default function App() {
   // Fade-up scroll observer (runs once after mount)
@@ -44,7 +42,7 @@ export default function App() {
     <>
       <SmoothScroll>
         {/* Home page */}
-        {/* <Intro /> */}
+        <Intro />
         <Cursor />
         <Navbar />
         <Hero />

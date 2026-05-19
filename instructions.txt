@@ -1,0 +1,22 @@
+1.cd backend
+
+pm2 start LocalWorkers/EmailWorker.js --name developera-worker
+
+pm2 list //for seeing all the LocalWorkers
+
+ pm2 logs name_of_the_worker
+
+ pm2 stop developera-worker
+
+ pm2 restart developera-worker
+
+ pm2 delete developera-worker
+
+pm2 monit // see the restart history
+
+C:\Users\YOUR_USER\.pm2\logs
+
+// always do this to auto save and auto restart
+ pm2 save 
+ pm2 startup
+ pm2-startup install
