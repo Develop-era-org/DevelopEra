@@ -11,6 +11,7 @@ const FormSubmit = async (req, res, next) => {
     });
   }
   try {
+    console.log("Saving form...");
     // save to DB
     const savedForm = await Form.create(req.body);
 

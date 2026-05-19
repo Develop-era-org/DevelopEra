@@ -2,6 +2,7 @@ import transporter from "../../mailer.js";
 
 const FormEmail = async (req, res, next) => {
   try {
+    console.log("Sending email...");
     const info = await transporter.sendMail({
       from: `"Chandu from DevelopEra" <${process.env.EMAIL}>`,
 
@@ -94,13 +95,14 @@ DevelopEra
     });
 
     console.log(info.response);
+    console.log("Email sent");
     next();
   } catch (error) {
-    console.log(error);
+    console.log("EMAIL ERROR:", error);
 
     res.status(500).json({
       success: false,
-      message: "Email failed",
+      message: error.message,
     });
   }
 };
