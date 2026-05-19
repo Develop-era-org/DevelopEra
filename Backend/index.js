@@ -26,7 +26,7 @@ app.use(
     origin: process.env.FRONTEND_URL,
   }),
 );
-console.log("CORS configured for:", process.env.FRONTEND_URL);
+console.log("CORS configured f or: ", process.env.FRONTEND_URL);
 
 // Global error handling middleware
 app.use((err, req, res, next) => {
