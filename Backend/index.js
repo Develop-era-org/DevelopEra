@@ -27,7 +27,8 @@ app.use(
   }),
 );
 console.log("CORS configured f or: ", process.env.FRONTEND_URL);
-
+//rate limiter
+app.set("trust proxy", 1);
 // Global error handling middleware
 app.use((err, req, res, next) => {
   console.error("GLOBAL ERROR:", err);

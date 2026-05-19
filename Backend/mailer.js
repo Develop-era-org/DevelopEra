@@ -3,12 +3,32 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: process.env.EMAIL,
+//     pass: process.env.APP_PASSWORD,
+//   },
+// });
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+
   auth: {
     user: process.env.EMAIL,
     pass: process.env.APP_PASSWORD,
   },
+
+  connectionTimeout: 10000,
 });
 
+transporter.verify((error, success) => {
+  if (error) {
+    console.log("MAIL ERROR:", error);
+  } else {
+    console.log("Mailer Ready");
+  }
+});
 export default transporter;
