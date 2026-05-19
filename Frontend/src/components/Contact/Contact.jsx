@@ -35,7 +35,7 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch(process.env.BACKEND_URL + "/form", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/form`, {
         method: "POST",
 
         headers: {
