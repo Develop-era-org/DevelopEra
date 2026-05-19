@@ -69,7 +69,9 @@ button {
   transform: scaleX(0);
   transform-origin: left center;
 }
-
+.delay-1::after {
+  animation-delay: 2.5s !important;
+}
 /* animate when visible */
 
 .visible .underline-accent::after {

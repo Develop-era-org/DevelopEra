@@ -63,7 +63,7 @@ export default function Contact() {
   };
 
   const contactItems = [
-    { icon: "📧", label: "Email", value: "developera@gmail.com" },
+    { icon: "📧", label: "Email", value: "developera0000@gmail.com" },
     { icon: "📍", label: "Location", value: "Banglore, India" },
   ];
 

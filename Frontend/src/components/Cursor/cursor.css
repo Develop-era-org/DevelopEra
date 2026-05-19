@@ -11,7 +11,6 @@
     width 0.25s,
     height 0.25s,
     opacity 0.2s;
-  mix-blend-mode: difference;
 }
 
 .cursor-ring {
@@ -28,4 +27,5 @@
     width 0.3s,
     height 0.3s,
     opacity 0.3s;
+  mix-blend-mode: difference;
 }

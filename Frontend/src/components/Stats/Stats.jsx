@@ -2,9 +2,9 @@ import "./stats.css";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 120, suffix: "+", label: "Projects Successfully Delivered" },
-  { value: 8, suffix: "yrs", label: "Building Digital Products" },
-  { value: 47, suffix: "+", label: "Long-Term Clients" },
+  { value: 12, suffix: "+", label: "Projects Successfully Delivered" },
+  { value: 2, suffix: "yrs", label: "Building Digital Products" },
+  { value: 5, suffix: "+", label: "Long-Term Clients" },
   { value: 3, suffix: "×", label: "Average Conversion Growth" },
 ];
 

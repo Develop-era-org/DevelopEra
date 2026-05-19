@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import { BrowserRouter } from "react-router-dom";
 // Single stylesheet — all CSS merged to avoid cross-file @keyframes issues
 // import "./styles/index.css";
 
@@ -40,23 +40,25 @@ export default function App() {
 
   return (
     <>
-      <SmoothScroll>
-        {/* Home page */}
-        <Intro />
-        <Cursor />
-        <Navbar />
-        <Hero />
-        <Marquee />
+      <BrowserRouter>
+        <SmoothScroll>
+          {/* Home page */}
+          <Intro />
+          <Cursor />
+          <Navbar />
+          <Hero />
+          <Marquee />
 
-        <Stats />
-        <Services />
-        <Work />
-        <Process />
-        <Testimonials />
-        <CallSection />
-        <Contact />
-        <Footer />
-      </SmoothScroll>
+          <Stats />
+          <Services />
+          <Work />
+          <Process />
+          <Testimonials />
+          <CallSection />
+          <Contact />
+          <Footer />
+        </SmoothScroll>
+      </BrowserRouter>
     </>
   );
 }
