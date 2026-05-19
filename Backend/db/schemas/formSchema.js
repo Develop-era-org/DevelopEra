@@ -21,6 +21,10 @@ const formSchema = new mongoose.Schema(
     info: {
       type: String,
     },
+    emailed: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
