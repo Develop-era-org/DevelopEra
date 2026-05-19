@@ -1,0 +1,148 @@
+.cta-section {
+  margin: 0 3rem 8rem;
+  background: var(--accent2);
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  padding: 6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.cta-bg-text {
+  position: absolute;
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 18rem;
+  line-height: 0.8;
+  color: rgba(0, 0, 0, 0.06);
+  right: -2rem;
+  bottom: -2rem;
+  pointer-events: none;
+  --web-kit-user-select: none;
+  letter-spacing: -0.05em;
+}
+.cta-headline {
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.cta-sub {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+.cta-form {
+  position: relative;
+  z-index: 1;
+}
+.form-title {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+}
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.form-field {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  outline: none;
+  font-family: "Syne", sans-serif;
+  font-size: 0.85rem;
+  color: #fff;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.form-field::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+.form-field:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+}
+textarea.form-field {
+  resize: none;
+  height: 100px;
+}
+select.form-field option {
+  background: var(--accent2);
+  color: #fff;
+}
+.form-submit {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--accent2);
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.form-submit:hover {
+  background: var(--ink);
+  color: var(--accent);
+  transform: scale(1.02);
+}
+.form-note {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 0.8rem;
+}
+/* Success state */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.form-container.submitted .form-grid {
+  display: none;
+}
+.form-container.submitted .form-title {
+  display: none;
+}
+.form-container.submitted .form-success {
+  display: block;
+}
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.success-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}

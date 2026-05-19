@@ -1,0 +1,62 @@
+footer {
+  border-top: 1px solid var(--border);
+  padding: 4rem 3rem 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 4rem;
+}
+.footer-brand .logo {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.3rem;
+  color: var(--ink);
+}
+.footer-brand .logo span {
+  color: var(--accent2);
+}
+.footer-brand p {
+  font-family: "Syne", sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.footer-links a {
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: var(--accent2);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom p {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}

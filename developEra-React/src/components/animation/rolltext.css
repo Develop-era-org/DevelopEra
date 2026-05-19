@@ -1,0 +1,25 @@
+.roll {
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.roll span {
+  position: relative;
+  display: inline-block;
+
+  transition: transform var(--duration, 0.5s) cubic-bezier(0.76, 0, 0.24, 1);
+
+  transition-delay: calc(var(--i) * var(--delay, 0.02s));
+}
+
+.roll span::after {
+  content: attr(data-letter);
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+a:hover .roll span,
+.roll:hover span {
+  transform: translateY(-100%);
+}

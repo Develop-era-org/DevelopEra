@@ -1,0 +1,25 @@
+# Environment variables
+.env
+.env.local
+
+# Node modules
+node_modules/
+
+# Build folders
+dist/
+build/
+
+# Coverage
+coverage/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package manager locks (keep ONE depending on package manager)
+# package-lock.json
+# yarn.lock

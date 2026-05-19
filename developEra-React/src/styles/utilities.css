@@ -1,0 +1,82 @@
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  text-decoration: none;
+  border: none;
+  cursor: none;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.btn-primary:hover {
+  background: var(--accent2);
+  transform: scale(1.03);
+}
+.btn-primary .arrow {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.btn-primary:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: none;
+  transition: color 0.2s;
+  padding: 0;
+}
+.btn-ghost:hover {
+  color: var(--accent2);
+}
+.btn-ghost .play-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.btn-ghost:hover .play-icon {
+  background: var(--accent2);
+  border-color: var(--accent2);
+  color: #fff;
+}
+
+/* ── TAGS ── */
+.tag {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition:
+    border-color 0.4s,
+    color 0.4s;
+}

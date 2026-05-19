@@ -1,0 +1,55 @@
+/* ── MARQUEE ── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── SPIN (orbit rings) ── */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── GLOW (center globe) ── */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 40px rgba(200, 255, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 0 80px rgba(200, 255, 0, 0.5);
+  }
+}
+
+/* ── PULSE (hero tag dot) ── */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* ── FADE UP ON SCROLL ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
