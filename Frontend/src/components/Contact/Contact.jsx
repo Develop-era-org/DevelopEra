@@ -4,7 +4,7 @@ import RollText from "../animation/Rolltext";
 import ScrambleText from "../animation/ScambleText";
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
-
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -21,7 +21,9 @@ export default function Contact() {
     setErrors({ ...errors, [e.target.name]: false });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const newErrors = {};
 
     if (!form.name) newErrors.name = true;
@@ -34,6 +36,8 @@ export default function Contact() {
       return;
     }
 
+    if (loading) return;
+    setLoading(true);
     try {
       const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/form`, {
         method: "POST",
@@ -59,6 +63,8 @@ export default function Contact() {
       console.error(error);
 
       alert("Server error");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -215,8 +221,12 @@ export default function Contact() {
               style={errors.info ? { borderColor: "rgba(255,255,255,.7)" } : {}}
             />
 
-            <button className="form-submit" onClick={handleSubmit}>
-              Get My Free Proposal ✦
+            <button
+              className="form-submit"
+              onClick={handleSubmit}
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Get My Free Proposal ✦"}
             </button>
             <p className="form-note">
               <span className="form-note-text">
