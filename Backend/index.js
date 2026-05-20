@@ -44,6 +44,7 @@ app.use(
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+//route for the render health check using cron job auto ping every 5 minutes
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "ok",
