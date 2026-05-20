@@ -67,8 +67,7 @@
   font-size: 0.9rem;
   line-height: 1.7;
   color: var(--muted);
-  transition: color 0.4s;z
-
+  transition: color 0.4s;
 }
 .service-card:hover .service-desc {
   color: rgba(244, 240, 232, 0.6);
