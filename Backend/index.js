@@ -31,16 +31,16 @@ app.use(
 console.log("CORS configured for:", process.env.FRONTEND_URL);
 
 // trust proxy
-app.set("trust proxy", 1);
-
-// routes
-app.use("/", FormRoute);
+app.set("trust proxy", true);
 app.use(
   rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // limit each IP to 100 requests per windowMs
   }),
 );
+// routes
+app.use("/", FormRoute);
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
