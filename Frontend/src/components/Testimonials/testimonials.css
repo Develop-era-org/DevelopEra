@@ -20,7 +20,7 @@
   flex-direction: column;
 }
 .testimonial-text {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: -0.01em;
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 1rem;
   background: var(--warm);
   flex-shrink: 0;
@@ -57,7 +57,7 @@
   color: var(--accent);
 }
 .testimonial-name {
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.85rem;
 }
@@ -65,7 +65,7 @@
   color: var(--cream);
 }
 .testimonial-role {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.06em;
   color: var(--muted);
@@ -150,7 +150,7 @@
 .testimonial-text {
   position: relative;
 
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: -0.01em;

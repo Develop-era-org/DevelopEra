@@ -1,33 +1,35 @@
 import ScrambleText from "../animation/ScambleText";
 import "./process.css";
+import { Search, PencilRuler, Code2, ArrowUpRight } from "lucide-react";
+
 const steps = [
   {
     num: "01",
-    icon: "🔍",
+    icon: <Search size={18} strokeWidth={1.7} />,
     name: "Discover",
     duration: "~1 week",
-    desc: "We learn about your business, customers, and goals so every decision is backed by strategy — not guesswork.",
+    desc: "We align on goals, audience, and positioning before any design decisions are made.",
   },
   {
     num: "02",
-    icon: "🎨",
+    icon: <PencilRuler size={18} strokeWidth={1.7} />,
     name: "Design",
     duration: "~2 weeks",
-    desc: "We design clean, modern interfaces focused on clarity, trust, and conversions before development begins.",
+    desc: "Interfaces are designed with clarity, structure, and user experience at the center.",
   },
   {
     num: "03",
-    icon: "⚙️",
+    icon: <Code2 size={18} strokeWidth={1.7} />,
     name: "Build",
     duration: "~4–8 weeks",
-    desc: "Your project is developed using modern technologies for speed, responsiveness, and long-term scalability.",
+    desc: "Development focuses on performance, scalability, and polished interactions.",
   },
   {
     num: "04",
-    icon: "🚀",
-    name: "Launch & Grow",
+    icon: <ArrowUpRight size={18} strokeWidth={1.7} />,
+    name: "Launch",
     duration: "Ongoing",
-    desc: "After launch, we continue optimizing performance and user experience to help your business grow consistently.",
+    desc: "After launch, we refine and optimize based on real user behavior and growth.",
   },
 ];
 

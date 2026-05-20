@@ -48,7 +48,7 @@
 }
 
 .nav-logo {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   letter-spacing: -0.02em;
   color: #fff;
@@ -73,7 +73,7 @@
 .di-links a {
   position: relative;
 
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.07em;
 
@@ -108,7 +108,7 @@
 
   color: var(--ink);
 
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
@@ -217,7 +217,7 @@
 }
 
 .mobile-menu a {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 2.4rem;
 
   letter-spacing: -0.02em;
@@ -243,7 +243,7 @@
 
   border-radius: 100px;
 
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem !important;
   font-weight: 700;
 

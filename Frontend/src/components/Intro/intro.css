@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
 
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: clamp(4rem, 11vw, 11rem);
   font-weight: 400;
 

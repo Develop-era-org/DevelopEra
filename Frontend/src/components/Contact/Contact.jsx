@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./contact.css";
 import RollText from "../animation/Rolltext";
 import ScrambleText from "../animation/ScambleText";
+import { Mail, MapPin } from "lucide-react";
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -29,8 +31,8 @@ export default function Contact() {
     if (!form.name) newErrors.name = true;
     if (!form.email) newErrors.email = true;
     if (!form.project) newErrors.project = true;
-    if (!form.info) newErrors.info = true;
-
+    // if (!form.info) newErrors.info = true;
+    if (!form.company) newErrors.company = true;
     if (Object.keys(newErrors).length) {
       setErrors(newErrors);
       return;
@@ -69,17 +71,26 @@ export default function Contact() {
   };
 
   const contactItems = [
-    { icon: "📧", label: "Email", value: "developera0000@gmail.com" },
-    { icon: "📍", label: "Location", value: "Banglore, India" },
+    {
+      icon: <Mail size={18} strokeWidth={1.8} />,
+      label: "Email",
+      value: "developera0000@gmail.com",
+    },
+
+    {
+      icon: <MapPin size={18} strokeWidth={1.8} />,
+      label: "Location",
+      value: "Nellore, India",
+    },
   ];
 
   return (
     <section className="cta-section" id="contact" data-nav-section="contact">
-      <div className="cta-bg-text">
+      {/* <div className="cta-bg-text">
         Let's
         <br />
         build.
-      </div>
+      </div> */}
 
       {/* Left info */}
       <div>
@@ -121,7 +132,7 @@ export default function Contact() {
               <div>
                 <div
                   style={{
-                    fontFamily: '"DM Mono", monospace',
+                    fontFamily: "var(--font-mono)",
                     fontSize: "0.6rem",
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
@@ -132,7 +143,7 @@ export default function Contact() {
                 </div>
                 <div
                   style={{
-                    fontFamily: '"Syne", sans-serif',
+                    fontFamily: "var(--font-sans)",
                     color: "#fff",
                     fontSize: "0.9rem",
                   }}
@@ -158,22 +169,19 @@ export default function Contact() {
           <div className="form-grid">
             <div className="form-row">
               <input
-                className="form-field"
+                className={errors.name ? "form-field error" : "form-field"}
                 type="text"
                 name="name"
-                placeholder="Your name"
+                placeholder={errors.name ? "*Required field" : "Your name"}
                 value={form.name}
                 onChange={handleChange}
-                style={
-                  errors.name ? { borderColor: "rgba(255,255,255,.7)" } : {}
-                }
               />
 
               <input
-                className="form-field"
+                className={errors.email ? "form-field error" : "form-field"}
                 type="email"
                 name="email"
-                placeholder="Email address"
+                placeholder={errors.email ? "*Required field" : "Email address"}
                 value={form.email}
                 onChange={handleChange}
                 style={
@@ -183,17 +191,17 @@ export default function Contact() {
             </div>
 
             <input
-              className="form-field"
+              className={errors.company ? "form-field error" : "form-field"}
               type="text"
               name="company"
-              placeholder="Company"
+              placeholder={errors.company ? "*Required field" : "Company"}
               value={form.company}
               onChange={handleChange}
             />
 
             <select
               aria-label="Project Type"
-              className="form-field"
+              className={errors.project ? "form-field error" : "form-field"}
               name="project"
               value={form.project}
               onChange={handleChange}
@@ -202,7 +210,7 @@ export default function Contact() {
               }
             >
               <option value="" disabled>
-                What do you need?
+                {errors.project ? "*Required field" : "What do you need?"}
               </option>
 
               <option>Website / Landing Page</option>
@@ -213,9 +221,13 @@ export default function Contact() {
             </select>
 
             <textarea
-              className="form-field"
+              className={errors.info ? "form-field error" : "form-field"}
               name="info"
-              placeholder="Tell us about your project — the more detail, the better..."
+              placeholder={
+                errors.info
+                  ? "*Required field"
+                  : "Tell us about your project — the more detail, the better..."
+              }
               value={form.info}
               onChange={handleChange}
               style={errors.info ? { borderColor: "rgba(255,255,255,.7)" } : {}}
@@ -242,7 +254,7 @@ export default function Contact() {
             <p
               style={{
                 color: "rgba(255,255,255,0.7)",
-                fontFamily: '"Syne", sans-serif',
+                fontFamily: "var(--font-sans)",
                 fontSize: "0.9rem",
               }}
             >

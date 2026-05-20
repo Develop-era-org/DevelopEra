@@ -47,7 +47,7 @@ export default function App() {
           <Cursor />
           <Navbar />
           <Hero />
-          <Marquee />
+          {/* <Marquee /> */}
 
           <Stats />
           <Services />

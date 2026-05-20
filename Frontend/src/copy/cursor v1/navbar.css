@@ -28,7 +28,7 @@
   }
 }
 .nav-logo {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   letter-spacing: -0.02em;
   color: #fff;
@@ -37,7 +37,7 @@
   flex-shrink: 0;
 }
 .nav-logo span {
-  color: var(--accent);
+  color: var(--accent2);
 }
 
 .di-links {
@@ -49,7 +49,7 @@
   justify-content: center;
 }
 .di-links a {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.07em;
   color: rgba(255, 255, 255, 0.5);
@@ -73,7 +73,7 @@
 .di-cta {
   background: var(--accent);
   color: var(--ink);
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
@@ -140,7 +140,7 @@
   display: flex;
 }
 .mobile-menu a {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 2.4rem;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.7);
@@ -156,7 +156,7 @@
   color: var(--ink) !important;
   padding: 0.9rem 2.4rem;
   border-radius: 100px;
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem !important;
   font-weight: 700;
   margin-top: 1rem;

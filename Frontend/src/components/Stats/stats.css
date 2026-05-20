@@ -36,7 +36,7 @@
 
   white-space: nowrap;
 
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 4rem;
   line-height: 1;
 
@@ -47,14 +47,15 @@
 }
 
 .stat-num span {
-  color: #ff6b00;
+  color: var(--accent2);
+  /* color: #ff6b00; */
 }
 
 .stat-label {
   position: relative;
   z-index: 2;
 
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -70,7 +71,7 @@
   height: 180px;
   background: radial-gradient(
     circle,
-    rgba(255, 107, 0, 0.22) 0%,
+    rgba(0, 255, 229, 0.22) 0%,
     transparent 70%
   );
 

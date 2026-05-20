@@ -1,11 +1,8 @@
-.error-text {
-  margin-top: 6px;
-
-  color: #ff6b6b;
-
-  font-size: 13px;
-
-  letter-spacing: 0.5px;
+.form-field::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.form-field.error::placeholder {
+  color: var(--cream);
 }
 .cta-section {
   margin: 0 3rem 8rem;
@@ -21,7 +18,7 @@
 }
 .cta-bg-text {
   position: absolute;
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: 18rem;
   line-height: 0.8;
@@ -33,14 +30,14 @@
   letter-spacing: -0.05em;
 }
 .cta-headline {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.5rem, 4vw, 3.8rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: #fff;
 }
 .cta-sub {
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
@@ -51,8 +48,8 @@
   z-index: 1;
 }
 .form-title {
-  font-family: "DM Mono", monospace;
-  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
@@ -75,7 +72,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   outline: none;
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   color: #fff;
   transition:
@@ -103,7 +100,7 @@ select.form-field option {
   border-radius: 10px;
   background: #fff;
   color: var(--accent2);
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
@@ -123,9 +120,8 @@ select.form-field option {
   transform: scale(1.02);
 }
 .form-note {
-  font-family: "DM Mono", monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.06em;
+  font-family: var(--font-mono);
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.4);
   text-align: center;
   margin-top: 0.8rem;
@@ -150,7 +146,7 @@ select.form-field option {
   margin-bottom: 1rem;
 }
 .success-title {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 1.8rem;
   color: #fff;
   margin-bottom: 0.5rem;

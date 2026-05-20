@@ -1,30 +1,33 @@
 import ScrambleText from "../animation/ScambleText";
 import "./services.css";
 
+import { Globe, Layers3, Rocket } from "lucide-react";
+
 const services = [
   {
     num: "01",
-    icon: "🌐",
+    icon: <Globe size={18} strokeWidth={1.7} />,
     name: "High-Converting Websites",
     desc: "Clean, modern websites designed to build trust, keep visitors engaged, and turn traffic into paying customers.",
     tags: ["Next.js", "Webflow", "CMS", "SEO"],
   },
+
   {
     num: "02",
-    icon: "⚡",
+    icon: <Layers3 size={18} strokeWidth={1.7} />,
     name: "Custom Web Applications",
     desc: "Fast, scalable web apps built around your workflow, helping your business automate processes and deliver a better user experience.",
     tags: ["React", "TypeScript", "Node.js", "APIs"],
   },
+
   {
     num: "03",
-    icon: "🚀",
+    icon: <Rocket size={18} strokeWidth={1.7} />,
     name: "SaaS Product Development",
     desc: "From MVP to full-scale SaaS platforms, we help founders launch products users actually enjoy using.",
     tags: ["Auth", "Payments", "Multi-tenant", "Analytics"],
   },
 ];
-
 export default function Services() {
   return (
     <section className="services" id="services" data-nav-section="services">
@@ -41,7 +44,7 @@ export default function Services() {
         <p
           style={{
             maxWidth: 300,
-            fontFamily: '"Syne", sans-serif',
+            fontFamily: "var(--font-sans)",
             fontSize: "0.9rem",
             color: "var(--muted)",
             lineHeight: 1.7,

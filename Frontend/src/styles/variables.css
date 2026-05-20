@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --ink: #0a0a08;
   --cream: #f4f0e8;
   --warm: #e8e0cc;
@@ -8,4 +8,88 @@
   --muted: #6b6458;
   --border: rgba(10, 10, 8, 0.12);
   --cursor-color: #c8ff00;
+
+} */
+
+/* :root {
+  --ink: #111111;
+  --cream: #fffbf4;
+  --warm: #e7ddcf;
+
+  --accent: #0f6b4b;
+  --accent2: #1f8a63;
+  --accent3: rgba(15, 107, 75, 0.18);
+
+  --muted: #7b7468;
+  --border: rgba(17, 17, 17, 0.08);
+
+  --cursor-color: #41e6ac;
+
+  --card-bg: rgba(255, 255, 255, 0.52);
+  --glass-bg: rgba(255, 255, 255, 0.12);
+
+  --shadow-sm: 0 4px 18px rgba(0, 0, 0, 0.05);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 25px 80px rgba(0, 0, 0, 0.14);
+
+  --gradient-primary: linear-gradient(135deg, #0f6b4b 0%, #1f8a63 100%);
+
+  --gradient-soft: linear-gradient(180deg, #f8f5ef 0%, #ece4d7 100%);
+} */
+:root {
+  --font-sans: "Satoshi", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --font-mono: "Geist Mono", monospace;
+  --ink: #121212;
+  --cream: #fffbf4;
+  --warm: #e7ddcf;
+  --accent: #0f6b4b;
+  --accent2: #1f8a63;
+  --accent3: rgba(15, 107, 75, 0.18);
+  --muted: #7b7468;
+  --border: rgba(17, 17, 17, 0.08);
+  --cursor-color: #41e6ac;
+  --card-bg: rgba(255, 255, 255, 0.52);
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --shadow-sm: 0 4px 18px rgba(0, 0, 0, 0.05);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 25px 80px rgba(0, 0, 0, 0.14);
+  --gradient-primary: linear-gradient(135deg, #0f6b4b 0%, #1f8a63 100%);
+  --gradient-soft: linear-gradient(180deg, #f8f5ef 0%, #ece4d7 100%);
+}
+@font-face {
+  font-family: "Satoshi";
+
+  src: url("./assets/fonts/Satoshi-Variable.ttf") format("truetype");
+
+  font-weight: 300 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+
+  src: url("./assets/fonts/Satoshi-VariableItalic.ttf") format("truetype");
+
+  font-weight: 300 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+
+  src: url("./assets/fonts/GeistMono-VariableFont_wght.ttf") format("truetype");
+
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+
+  src: url("./assets/fonts/GeistMono-Italic-VariableFont_wght.ttf")
+    format("truetype");
+
+  font-weight: 100 900;
+  font-style: italic;
 }

@@ -6,7 +6,7 @@ footer {
   gap: 4rem;
 }
 .footer-brand .logo {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-serif);
   font-size: 1.3rem;
   color: var(--ink);
 }
@@ -14,8 +14,10 @@ footer {
   color: var(--accent2);
 }
 .footer-brand p {
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
   font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.7;
@@ -23,9 +25,9 @@ footer {
   max-width: 260px;
 }
 .footer-col-title {
-  font-family: "DM Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 1.5rem;
@@ -33,11 +35,12 @@ footer {
 .footer-links {
   list-style: none;
   display: flex;
+  letter-spacing: -0.015em;
   flex-direction: column;
   gap: 0.8rem;
 }
 .footer-links a {
-  font-family: "Syne", sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   color: var(--ink);
   text-decoration: none;
@@ -55,8 +58,9 @@ footer {
   align-items: center;
 }
 .footer-bottom p {
-  font-family: "DM Mono", monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.6em;
   color: var(--muted);
+  text-transform: uppercase;
 }

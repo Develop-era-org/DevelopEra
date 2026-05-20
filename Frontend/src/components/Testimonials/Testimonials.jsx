@@ -20,7 +20,7 @@ const testimonials = [
       marginTop: "1.5rem",
     },
     textStyle: {
-      fontFamily: '"Instrument Serif", serif',
+      fontFamily: "var(--font-serif)",
       fontSize: "1.05rem",
       lineHeight: 1.6,
     },
@@ -37,7 +37,7 @@ const testimonials = [
       marginTop: "1.5rem",
     },
     textStyle: {
-      fontFamily: '"Instrument Serif", serif',
+      fontFamily: "var(--font-serif)",
       fontSize: "1.05rem",
       lineHeight: 1.6,
     },
