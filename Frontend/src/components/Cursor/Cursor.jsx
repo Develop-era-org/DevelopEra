@@ -1,62 +1,107 @@
 import { useEffect, useRef } from "react";
 import "./cursor.css";
+
 export default function Cursor() {
   const cursorRef = useRef(null);
   const ringRef = useRef(null);
 
   useEffect(() => {
     const isTouchDevice = window.matchMedia("(hover:none)").matches;
+
     if (isTouchDevice) return;
 
     const cursor = cursorRef.current;
     const ring = ringRef.current;
-    let mx = 0,
-      my = 0,
-      rx = 0,
-      ry = 0;
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let ringX = 0;
+    let ringY = 0;
 
     const onMouseMove = (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      cursor.style.left = mx + "px";
-      cursor.style.top = my + "px";
-      document.documentElement.style.setProperty("--x", `${mx}px`);
-      document.documentElement.style.setProperty("--y", `${my}px`);
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top = `${mouseY}px`;
     };
 
-    const animRing = () => {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + "px";
-      ring.style.top = ry + "px";
-      requestAnimationFrame(animRing);
+    const animateRing = () => {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+
+      ring.style.left = `${ringX}px`;
+      ring.style.top = `${ringY}px`;
+
+      requestAnimationFrame(animateRing);
     };
+
+    animateRing();
 
     document.addEventListener("mousemove", onMouseMove);
-    animRing();
 
     const hoverEls = document.querySelectorAll(
-      "a,button,.proj-card,.proc-card,.service-card",
+      "a, button, .proj-card, .proc-card, .service-card",
     );
+
+    const addHover = () => {
+      cursor.classList.add("cursor-hover");
+      ring.classList.add("cursor-hover");
+    };
+
+    const removeHover = () => {
+      cursor.classList.remove("cursor-hover");
+      ring.classList.remove("cursor-hover");
+    };
+
     hoverEls.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        cursor.style.width = "20px";
-        cursor.style.height = "20px";
-        ring.style.width = "64px";
-        ring.style.height = "64px";
-        ring.style.opacity = ".2";
-      });
-      el.addEventListener("mouseleave", () => {
-        cursor.style.width = "14px";
-        cursor.style.height = "14px";
-        ring.style.width = "44px";
-        ring.style.height = "44px";
-        ring.style.opacity = ".45";
-      });
+      el.addEventListener("mouseenter", addHover);
+      el.addEventListener("mouseleave", removeHover);
     });
+
+    const nav = document.querySelector(".di-nav-wrap");
+
+    const addNavHover = () => {
+      cursor.classList.add("nav-hover");
+      ring.classList.add("nav-hover");
+    };
+
+    const removeNavHover = () => {
+      cursor.classList.remove("nav-hover");
+      ring.classList.remove("nav-hover");
+    };
+
+    if (nav) {
+      nav.addEventListener("mouseenter", addNavHover);
+      nav.addEventListener("mouseleave", removeNavHover);
+    }
+
+    const mouseDown = () => {
+      cursor.classList.add("click");
+    };
+
+    const mouseUp = () => {
+      cursor.classList.remove("click");
+    };
+
+    document.addEventListener("mousedown", mouseDown);
+    document.addEventListener("mouseup", mouseUp);
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mousedown", mouseDown);
+      document.removeEventListener("mouseup", mouseUp);
+
+      hoverEls.forEach((el) => {
+        el.removeEventListener("mouseenter", addHover);
+        el.removeEventListener("mouseleave", removeHover);
+      });
+
+      if (nav) {
+        nav.removeEventListener("mouseenter", addNavHover);
+        nav.removeEventListener("mouseleave", removeNavHover);
+      }
     };
   }, []);
 

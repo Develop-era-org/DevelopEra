@@ -1,12 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import "./navbar.css";
 import ScrambleText from "../animation/ScambleText";
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-
   const navRef = useRef(null);
 
   const toggleMenu = () => {
@@ -15,49 +13,35 @@ export default function Navbar() {
       return !prev;
     });
   };
-
   const closeMenu = () => {
     setMenuOpen(false);
     document.body.style.overflow = "";
   };
 
+  // Smooth scroll
   const scrollTo = (e, id) => {
     e.preventDefault();
-
     closeMenu();
-
     const el = document.querySelector(id);
-
-    if (el) {
-      el.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  // Active section via IntersectionObserver
   useEffect(() => {
     const sections = document.querySelectorAll("[data-nav-section]");
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const sec = entry.target.dataset.navSection;
-
             setActiveSection(sec);
-
             setExpanded(sec !== "hero");
           }
         });
       },
-      {
-        threshold: 0.4,
-      },
+      { threshold: 0.4 },
     );
-
     sections.forEach((s) => observer.observe(s));
-
     return () => observer.disconnect();
   }, []);
 
@@ -70,18 +54,19 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         {links.slice(0, 3).map(({ label, href, section }) => (
           <a
             key={section}
             href={href}
+            data-section={section}
             className={activeSection === section ? "active" : ""}
             onClick={(e) => scrollTo(e, href)}
           >
             {label}
           </a>
         ))}
-
         <a
           href="#contact"
           className="mob-cta"
@@ -91,12 +76,9 @@ export default function Navbar() {
         </a>
       </div>
 
+      {/* Dynamic Island Nav */}
       <nav className={`di-nav-wrap ${expanded ? "expanded" : ""}`} ref={navRef}>
-        <a
-          href="#hero"
-          className="nav-logo"
-          onClick={(e) => scrollTo(e, "#hero")}
-        >
+        <a href="#" className="nav-logo" onClick={(e) => scrollTo(e, "#hero")}>
           develop<span>Era</span>
         </a>
 
@@ -105,10 +87,11 @@ export default function Navbar() {
             <li key={section}>
               <a
                 href={href}
+                data-section={section}
                 className={activeSection === section ? "active" : ""}
                 onClick={(e) => scrollTo(e, href)}
               >
-                <ScrambleText text={label} />
+                <ScrambleText text={label}></ScrambleText>
               </a>
             </li>
           ))}

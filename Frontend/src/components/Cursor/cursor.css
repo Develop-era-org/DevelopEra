@@ -1,32 +1,204 @@
+/* =========================
+   MAIN CURSOR DOT
+========================= */
+
 .cursor {
   position: fixed;
   width: 14px;
   height: 14px;
+
   background: var(--cursor-color);
+
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999;
+
   transform: translate(-50%, -50%);
+
   transition:
-    width 0.25s,
-    height 0.25s,
-    opacity 0.2s;
+    width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.18s ease,
+    opacity 0.2s ease,
+    background 0.3s ease,
+    box-shadow 0.35s ease,
+    border-radius 0.35s ease;
+
   mix-blend-mode: difference;
+
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--cursor-color) 80%, transparent),
+    0 0 28px color-mix(in srgb, var(--cursor-color) 35%, transparent),
+    0 0 60px color-mix(in srgb, var(--cursor-color) 15%, transparent);
+
+  animation: cursorBreath 3s ease-in-out infinite;
+
+  will-change: transform;
 }
+
+/* =========================
+   REMOVE OLD RING
+========================= */
 
 .cursor-ring {
   position: fixed;
-  width: 44px;
-  height: 44px;
-  border: 1.5px solid var(--cursor-color);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  opacity: 0.45;
-  transition:
-    width 0.3s,
-    height 0.3s,
-    opacity 0.3s;
+
   mix-blend-mode: difference;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(200, 255, 0, 0.45);
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 99998;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition:
+    transform 0.18s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.25s ease;
+
+  box-shadow:
+    0 0 14px color-mix(in srgb, var(--cursor-color) 20%, transparent),
+    inset 0 0 10px color-mix(in srgb, var(--cursor-color) 10%, transparent);
+
+  opacity: 0.7;
+
+  will-change: transform;
+}
+
+/* =========================
+   RING HOVER
+========================= */
+
+.cursor-ring.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.4);
+
+  opacity: 1;
+
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--cursor-color) 28%, transparent),
+    inset 0 0 14px color-mix(in srgb, var(--cursor-color) 16%, transparent);
+}
+/* =========================
+   NORMAL HOVER
+========================= */
+
+.cursor.cursor-hover {
+  width: 18px;
+  height: 18px;
+
+  background: var(--cursor-color);
+
+  box-shadow:
+    0 0 10px color-mix(in srgb, var(--cursor-color) 70%, transparent),
+    0 0 22px color-mix(in srgb, var(--cursor-color) 28%, transparent),
+    0 0 40px color-mix(in srgb, var(--cursor-color) 12%, transparent);
+
+  animation: cursorPulseHover 2.2s ease-in-out infinite;
+}
+
+/* =========================
+   NAVBAR HOVER
+========================= */
+.cursor-ring.nav-hover {
+  display: none;
+}
+.cursor.nav-hover {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 22px 30px 24px 34px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 0 24px rgba(255, 255, 255, 0.16),
+    0 0 60px color-mix(in srgb, var(--cursor-color) 12%, transparent);
+
+  animation: liquidMorph 5s ease-in-out infinite;
+}
+
+/* =========================
+   CLICK
+========================= */
+
+.cursor.click {
+  transform: translate(-50%, -50%) scale(0.72);
+}
+
+/* =========================
+   NORMAL PULSE
+========================= */
+
+@keyframes cursorBreath {
+  0% {
+    box-shadow:
+      0 0 12px color-mix(in srgb, var(--cursor-color) 50%, transparent),
+      0 0 28px color-mix(in srgb, var(--cursor-color) 18%, transparent);
+  }
+
+  50% {
+    box-shadow:
+      0 0 18px color-mix(in srgb, var(--cursor-color) 90%, transparent),
+      0 0 46px color-mix(in srgb, var(--cursor-color) 32%, transparent);
+  }
+
+  100% {
+    box-shadow:
+      0 0 12px color-mix(in srgb, var(--cursor-color) 50%, transparent),
+      0 0 28px color-mix(in srgb, var(--cursor-color) 18%, transparent);
+  }
+}
+
+/* =========================
+   HOVER PULSE
+========================= */
+
+@keyframes cursorPulseHover {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* =========================
+   LIQUID MORPH
+========================= */
+
+@keyframes liquidMorph {
+  0% {
+    border-radius: 22px 30px 24px 34px;
+  }
+
+  25% {
+    border-radius: 36px 18px 30px 16px;
+  }
+
+  50% {
+    border-radius: 18px 40px 18px 36px;
+  }
+
+  75% {
+    border-radius: 30px 18px 26px 36px;
+  }
+
+  100% {
+    border-radius: 22px 30px 24px 34px;
+  }
 }
