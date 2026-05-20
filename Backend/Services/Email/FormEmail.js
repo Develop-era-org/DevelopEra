@@ -32,7 +32,7 @@ DevelopEra
       `,
 
       html: `
-      <div style="font-family: Arial, sans-serif; background:#f5f5f5; padding:40px;">
+      <div style="font-family: Arial; background:#f5f5f5; padding:40px;">
 
         <div style="
           max-width:600px;
