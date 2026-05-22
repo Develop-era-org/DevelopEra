@@ -33,13 +33,13 @@ const cols = [
       },
       {
         name: "LinkedIn",
-        href: "https://linkedin.com/in/yourusername",
+        href: "https://www.linkedin.com/company/developeraa/",
         external: true,
       },
 
       {
         name: "GitHub",
-        href: "https://github.com/chandu14321",
+        href: "https://github.com/Develop-era-org",
         external: true,
       },
     ],
