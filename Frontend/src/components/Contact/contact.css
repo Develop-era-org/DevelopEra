@@ -4,6 +4,10 @@
 .form-field.error::placeholder {
   color: var(--cream);
 }
+
+.form-field.error:focus::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 .cta-section {
   margin: 0 3rem 8rem;
   background: var(--accent2);
