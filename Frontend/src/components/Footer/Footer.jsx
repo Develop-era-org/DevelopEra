@@ -70,11 +70,11 @@ export default function Footer() {
                 <li key={l.name}>
                   {l.external ? (
                     <a href={l.href} target="_blank" rel="noopener noreferrer">
-                      <RollText text={l.name} />
+                      <RollText delay={0.02} text={l.name} />
                     </a>
                   ) : (
                     <Link to={l.href}>
-                      <RollText text={l.name} />
+                      <RollText delay={0.01} text={l.name} />
                     </Link>
                   )}
                 </li>

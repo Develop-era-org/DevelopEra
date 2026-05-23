@@ -17,7 +17,7 @@ export default function CallSection() {
           <div className="call-meta">
             {details.map((d) => (
               <div className="call-detail" key={d}>
-                <RollText text={d}></RollText>
+                <RollText delay={0.01} duration={0.4} text={d}></RollText>
               </div>
             ))}
           </div>

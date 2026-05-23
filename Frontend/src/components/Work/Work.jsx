@@ -239,7 +239,7 @@ export default function Work() {
                   </div>
                 ))}
               </div>
-              <div className="proj-hover-cta">Read case study ↗</div>
+              {/* <div className="proj-hover-cta">Read case study ↗</div> */}
             </div>
             <div className="proj-meta">
               <div className="proj-name">{title}</div>

@@ -70,11 +70,7 @@ export default function Hero() {
         {/* Left */}
         <div className="hero-left fade-up visible">
           <div className="hero-tag">
-            <RollText
-              text="Now booking projects for 2026"
-              delay={0.02}
-              duration={0.3}
-            />
+            <RollText text="Now booking projects for 2026" delay={0.01} />
           </div>
           <h1 className="hero-headline fade-up">
             Websites that
