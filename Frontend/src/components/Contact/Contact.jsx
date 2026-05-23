@@ -5,7 +5,13 @@ import ScrambleText from "../animation/ScambleText";
 import { Mail, MapPin } from "lucide-react";
 
 export default function Contact() {
+  const [placeholder, setPlaceholder] = useState({
+    placeholderName: "Your name",
+    placeholderEmail: "Email address",
+    placeholderCompany: "Company",
+  });
   const [submitted, setSubmitted] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -35,6 +41,24 @@ export default function Contact() {
     if (!form.company) newErrors.company = true;
     if (Object.keys(newErrors).length) {
       setErrors(newErrors);
+      if (newErrors.company) {
+        setPlaceholder((prev) => ({
+          ...prev,
+          placeholderCompany: "*Required field",
+        }));
+      }
+      if (newErrors.email) {
+        setPlaceholder((prev) => ({
+          ...prev,
+          placeholderEmail: "*Required field",
+        }));
+      }
+      if (newErrors.name) {
+        setPlaceholder((prev) => ({
+          ...prev,
+          placeholderName: "*Required field ",
+        }));
+      }
       return;
     }
 
@@ -172,8 +196,29 @@ export default function Contact() {
                 className={errors.name ? "form-field error" : "form-field"}
                 type="text"
                 name="name"
-                placeholder={errors.name ? "*Required field" : "Your name"}
+                placeholder={placeholder.placeholderName}
                 value={form.name}
+                onBlur={() => {
+                  if (errors.name) {
+                    setPlaceholder((prev) => ({
+                      ...prev,
+                      placeholderName: "*Required field",
+                    }));
+                  } else {
+                    setPlaceholder((prev) => ({
+                      ...prev,
+                      placeholderName: "Your name",
+                    }));
+                  }
+                }}
+                onFocus={(e) => {
+                  if (errors.name) {
+                    setPlaceholder((prev) => ({
+                      ...prev,
+                      placeholderName: "Your name",
+                    }));
+                  }
+                }}
                 onChange={handleChange}
               />
 
@@ -181,12 +226,30 @@ export default function Contact() {
                 className={errors.email ? "form-field error" : "form-field"}
                 type="email"
                 name="email"
-                placeholder={errors.email ? "*Required field" : "Email address"}
+                placeholder={placeholder.placeholderEmail}
                 value={form.email}
                 onChange={handleChange}
-                style={
-                  errors.email ? { borderColor: "rgba(255,255,255,.7)" } : {}
-                }
+                onFocus={() => {
+                  if (errors.email) {
+                    setPlaceholder((prev) => ({
+                      ...prev,
+                      placeholderEmail: "Email address",
+                    }));
+                  }
+                }}
+                onBlur={(e) => {
+                  if (errors.email) {
+                    setPlaceholder((prev) => ({
+                      ...prev,
+                      placeholderEmail: "*Required field",
+                    }));
+                  } else {
+                    setPlaceholder((prev) => ({
+                      ...prev,
+                      placeholderEmail: "Email address",
+                    }));
+                  }
+                }}
               />
             </div>
 
@@ -194,8 +257,29 @@ export default function Contact() {
               className={errors.company ? "form-field error" : "form-field"}
               type="text"
               name="company"
-              placeholder={errors.company ? "*Required field" : "Company"}
+              placeholder={placeholder.placeholderCompany}
               value={form.company}
+              onFocus={() => {
+                if (errors.company) {
+                  setPlaceholder((prev) => ({
+                    ...prev,
+                    placeholderCompany: "Company",
+                  }));
+                }
+              }}
+              onBlur={() => {
+                if (errors.company) {
+                  setPlaceholder((prev) => ({
+                    ...prev,
+                    placeholderCompany: "*Required field",
+                  }));
+                } else {
+                  setPlaceholder((prev) => ({
+                    ...prev,
+                    placeholderCompany: "Company",
+                  }));
+                }
+              }}
               onChange={handleChange}
             />
 
